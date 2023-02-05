@@ -1,0 +1,62 @@
+.card {
+  display: flex;
+  gap: $spaceGap;
+  flex-wrap: wrap;
+  &__img {
+    max-width: 370px;
+    flex-basis: calc((100% - 2 * var(--space-gap)) / 3);
+    border-left: 1px solid $borderProjectColor;
+    border-bottom: 1px solid $borderProjectColor;
+    border-right: 1px solid $borderProjectColor;
+    position: relative;
+    overflow: hidden;
+    transition: $transition-projects;
+    &:hover {
+      box-shadow: 0px 4px 4px $shadowColor;
+    }
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 2;
+    color: $secondaryColor;
+    letter-spacing: 0.06em;
+    padding: 19.85px 24px 3.97px 24px;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+  &__subtitle {
+    font-size: 16px;
+    line-height: 1.87;
+    color: $textColor;
+    padding: 0 24px 19.85px 24px;
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+  &__overlay {
+    min-height: 294px;
+    padding: 49px 24px 49px 45px;
+    background-color: $overlayCardProject;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(102%);
+    transition: $transition-overlay;
+  }
+  &__overlay-text {
+    color: $primaryColor;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  &__img:hover &__overlay,
+  &__overlay:focus {
+    transform: translateY(0);
+  }
+  &__container {
+    position: relative;
+    background-color: $primaryColor;
+  }
+}
