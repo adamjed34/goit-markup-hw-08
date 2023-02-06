@@ -1,43 +1,34 @@
-//colors for font
-$logoColor: #000000;
-$primaryColor: #ffffff;
-$secondaryColor: #212121;
-$textColor: #757575;
-$accentColor: #2196f3;
-//colors for background
-$bgBannerColor: #2f303a;
-$bgTeamButtonColor: #f5f4fa;
-$bgFooterColor: #2f303a;
-$bgFooterSocial: rgba(255, 255, 255, 0.1);
-$bgFooterInputBorder: rgba(255, 255, 255, 0.3);
-//color for forms, borders, overlay, shadow, icons
-$textFooterPlaceholder: rgba(255, 255, 255, 0.6);
-$borderNavColor: #ececec;
-$overlayImgText: rgba(47, 48, 58, 0.8);
-$shadowColor: rgba(0, 0, 0, 0.25);
-$iconsColor: #afb1bb;
-$borderProjectColor: #eeeeee;
-$overlayCardProject: rgba(33, 150, 243, 0.9);
-//colors for modal window
-$bgBackdrop: rgba(0, 0, 0, 0.8);
-$borderCloseModal: rgba(0, 0, 0, 0.1);
-$borderTexarea: rgba(33, 33, 33, 0.2);
-$placeholderTextarea: rgba(117, 117, 117, 0.5);
-//fonts
-$primaryFont: "Roboto", sans-serif;
-$secondaryFont: "Raleway", sans-serif;
-//transition
-$transition-social-team: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-nav: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-clients: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-filters: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-projects: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-overlay: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-form-icon: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-input: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
-//the remaning
-$spaceGap: 30px;
+$tablet: 768px;
+$maxTablet: 1199px;
+$desktop: 1200px;
 
+:root {
+  --main-text-color: #212121;
+  --secondary-text-color: #757575;
+  --main-background-color: #fff;
+  --secondary-background-color: #f5f4fa;
+  --main-selection-color: #2196f3;
+  --main-icons-color: #afb1b8;
+  --secondary-icons-color: #000;
+  --main-font-size: 14px;
+  --secondary-font-size: 12px;
+  --main-font-weight: 700;
+  --secondary-font-weight: 500;
+  --main-line-height: 1.14;
+  --secondary-line-height: 1.17;
+  --third-line-height: 1.71;
+  --main-letter-spacing: 0.03em;
+  --secondary-letter-spacing: 0.02em;
+  --third-letter-spacing: 0.06em;
+  --text-center: center;
+  --uppercase: uppercase;
+  --main-border-radius: 4px;
+  --pointer: pointer;
+  --main-gap: 30px;
+  --secondary-gap: 10px;
+  --transition-duration: 250ms;
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --mobile: 480px;
+  --tablet: #{$tablet};
+  --desktop: #{$desktop};
+}

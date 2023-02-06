@@ -1,72 +1,38 @@
+@use "../utils" as *;
+$lineHeightTeam: 1.19;
+
+.team-box {
+  background-color: var(--secondary-background-color);
+}
+
 .team {
-  background-color: $bgTeamButtonColor;
-  margin-top: -20px;
-  &__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: $spaceGap;
-  }
-  &__card {
-    background-color: $primaryColor;
-    text-align: center;
-    border-radius: 0px 0px 4px 4px;
-    box-shadow: 0px 4px 4px $shadowColor;
-  }
-  &__img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  &__img-default {
-    width: 100%;
-    height: auto;
-  }
-  &__title {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.18;
-    text-transform: capitalize;
-    color: $secondaryColor;
-    margin-top: 30px;
-  }
-  &__subtitle {
-    font-size: 16px;
-    line-height: 1.18;
-    text-transform: capitalize;
-    color: $textColor;
-    margin-top: 10px;
-  }
-  &__icons {
-    display: flex;
-    justify-content: center;
-    padding: 16px 32px 30px 32px;
-  }
-  &__icon-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50px;
-    margin-right: 10px;
-    background-color: $primaryColor;
-    transition: $transition-social-team;
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      --color1: $primaryColor;
-      background-color: $accentColor;
-    }
-  }
-  &__icon-svg {
-    fill: $primaryColor;
-  }
-  @include desktop {
-    margin-top: 94px;
-    &__card {
-      max-width: 270px;
-      flex-basis: calc((100% - 3 * $spaceGap) / 4);
-    }
-  }
+  @include flex;
+}
+
+.team__item {
+  background-color: var(--main-background-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 var(--main-border-radius) var(--main-border-radius);
+}
+
+.team__img {
+  margin-bottom: 30px;
+}
+
+.team__name {
+  font-size: 16px;
+  font-weight: var(--secondary-font-weight);
+  line-height: $lineHeightTeam;
+  letter-spacing: var(--main-letter-spacing);
+  text-align: var(--text-center);
+  margin-bottom: 10px;
+}
+
+.team__text {
+  color: var(--secondary-text-color);
+  line-height: $lineHeightTeam;
+  letter-spacing: var(--main-letter-spacing);
+  text-align: var(--text-center);
+  margin-bottom: 16px;
 }

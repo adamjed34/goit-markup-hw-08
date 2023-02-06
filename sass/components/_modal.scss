@@ -1,58 +1,57 @@
-.backdrop {
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: $bgBackdrop;
-}
+@use "../utils" as *;
+
 .modal {
   position: relative;
-  width: 450px;
-  min-height: 609px;
-  border-radius: 4px;
-  background-color: $primaryColor;
-  animation: modal-open 3s forwards;
-  @include desktop {
+  margin: auto;
+  background-color: var(--main-background-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: var(--main-border-radius);
+  width: 94%;
+  max-width: 450px;
+  height: 94%;
+  max-height: 609px;
+
+  @include max-width(470px) {
+    overflow-y: scroll;
+  }
+
+  @include max-height-landscape(648px) {
+    overflow-y: scroll;
+  }
+
+  @include rwd(var(--desktop)) {
     width: 528px;
-    min-height: 581px;
+    height: 581px;
+    max-width: none;
+    max-height: none;
   }
 }
-@keyframes modal-open {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.is-hidden {
-  display: none;
-}
+
 .modal__close-btn {
   position: absolute;
   top: 8px;
-  right: 38px;
+  right: 8px;
   width: 30px;
   height: 30px;
-  background-color: $primaryColor;
-  border-radius: 50px;
-  border: 1px solid $borderCloseModal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    cursor: pointer;
-    fill: $accentColor;
+  background-color: var(--main-background-color);
+  @include bordered(rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  cursor: var(--pointer);
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    .modal__icon {
+      fill: var(--main-selection-color);
+    }
   }
-   @include tablet {
-    right: 8px;
-  }
-  @include desktop {
-    right: 8px;
-  }
+}
+
+.modal__icon {
+  fill: var(--secondary-icons-color);
+  transition: fill var(--transition-duration) var(--cubic-bezier);
+  position: absolute;
+  top: 9px;
+  left: 8px;
 }
