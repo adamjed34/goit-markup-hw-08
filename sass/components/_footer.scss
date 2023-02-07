@@ -1,27 +1,32 @@
-@use "../utils" as *;
-
-footer {
-  background-color: #2f303a;
-  padding: 60px 0;
-}
-
 .footer {
-  @include rwd(var(--tablet)) {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding-inline: 15px;
-  }
+    background-color: var(--gray);
+    padding: 60px 0;
 
-  @include rwd(var(--desktop)) {
-    justify-content: space-between;
-  }
-}
+    @media screen and (max-width: 1199px) {
 
-.footer__box {
-  text-align: var(--text-center);
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-  @include rwd(var(--desktop)) {
-    text-align: initial;
-  }
+            @media screen and (min-width: 768px) {
+                justify-content: flex-start;
+            }
+        }
+
+        &__contact {
+            margin-bottom: 60px;
+
+            @media screen and (min-width: 768px) and (max-width: 1199px) {
+                width: 50%;
+            }
+        }
+
+        &__flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
 }

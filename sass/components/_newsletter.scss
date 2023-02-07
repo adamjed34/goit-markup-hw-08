@@ -1,71 +1,69 @@
-@use "../utils" as *;
-
 .newsletter {
-  @include rwd(var(--desktop)) {
-    padding-top: 12px;
-  }
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
-.newsletter__header {
-  color: var(--main-background-color);
-  font-size: var(--main-font-size);
-  line-height: var(--main-line-height);
-  text-align: var(--text-center);
-  letter-spacing: var(--main-letter-spacing);
-  text-transform: var(--uppercase);
-  margin-bottom: 20px;
+    @media screen and (min-width: 1200px) {
+        margin-left: 78px;
+        width: auto;
+        align-items: flex-start;
+    }
 
-  @include rwd(var(--desktop)) {
-    text-align: initial;
-  }
-}
+    &__header {
+        text-transform: uppercase;
+        color: var(--white);
+        line-height: 1.14em;
+        margin-bottom: 20px;
+    }
 
-.newsletter__input {
-  color: var(--main-background-color);
-  background-color: inherit;
-  width: 100%;
-  @include bordered(rgba(255, 255, 255, 0.3));
-  border-radius: var(--main-border-radius);
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
-  outline: none;
-  padding: 15px 16px;
-  margin-bottom: 20px;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
 
-  &::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.25;
-    letter-spacing: var(--main-letter-spacing);
-  }
+        @media screen and (min-width: 480px) and (max-width: 1199px) {
+            width: 450px;
+        }
 
-  @include rwd(var(--tablet)) {
-    width: 450px;
-  }
+        @media screen and (min-width: 1200px) {
+            flex-direction: row;
+            gap: 0;
+        }
+    }
 
-  @include rwd(var(--desktop)) {
-    width: 358px;
-    margin-right: 8px;
-    margin-bottom: 0;
-  }
-}
+    &__input {
+        height: 50px;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(117, 117, 117, 0.3);
+        border-radius: 4px;
+        padding: 16px 15px;
+        background-color: transparent;
 
-.newsletter__box {
-  display: flex;
-  justify-content: center;
+        @media screen and (min-width: 1200px) {
+            width: 358px;
+        }
+    }
 
-  @include rwd(var(--desktop)) {
-    display: inline-block;
-  }
-}
+    &__button {
+        position: relative;
+        padding: 10px 76px 10px 42px;
+        text-align: center;
 
-.newsletter__btn {
-  @include btn;
-  position: relative;
-  padding: 10px 76px 10px 42px;
-}
+        @media screen and (max-width: 1199px) {
+            margin: 0 auto;
+        }
 
-.newsletter__icon-send {
-  --icon-send: currentColor;
-  position: absolute;
-  top: 13px;
-  right: 28px;
+        @media screen and (min-width: 1200px) {
+            margin-left: 12px;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 13px;
+        right: 28px;
+    }
 }

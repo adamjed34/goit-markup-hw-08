@@ -1,15 +1,26 @@
-@use "../utils" as *;
-
 .address {
-  color: var(--main-background-color);
-  font-style: normal;
-  font-size: var(--main-font-size);
-  line-height: var(--third-line-height);
-  letter-spacing: var(--main-letter-spacing);
-  margin-top: 20px;
-  margin-bottom: 8px;
+    font-style: normal;
+    margin-top: 20px;
 
-  @include rwd(var(--desktop)) {
-    margin-bottom: 9px;
-  }
+
+    &__margin {
+        margin: 8px 0;
+
+        @media screen and (min-width: 1200px) {
+            margin: 9px 0;
+        }
+
+    }
+
+    &__link {
+        text-decoration: none;
+        color: var(--white);
+        line-height: 1.71em;
+        opacity: 60%;
+    }
+
+    &__place {
+        color: var(--white);
+        line-height: 1.71em;
+    }
 }
