@@ -1,58 +1,62 @@
 .clients {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+    min-width: $screenMinWidth;
+    padding: 60px 15px;
+    margin: 0 auto;
 
-    &__item {
-        display: flex;
-        justify-content: center;
-        flex-basis: calc((100% - 30px) / 2);
-
-        @media screen and (min-width: 768px) {
-            flex-basis: calc((100% - 60px) / 3);
-        }
-
-        @media screen and (min-width: 1200px) {
-            flex-basis: auto
-        }
+    &__container {
+        max-width: $screenDesktop;
+        margin: 0 auto;
     }
 
-    &__link {
-        text-decoration: none;
-        color: var(--socials__link-color);
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &__heading {
+        font-weight: 700;
+        font-size: 28px;
+        color: getColor("black-second");
+        text-align: center;
+        margin-bottom: 50px;
+        line-height: 1.14;
 
-        &:hover .clients__icon,
-        &:focus .clients__icon {
-            border: 1px solid var(--blue);
-        }
+        @media screen and (min-width: $screenDesktop) {
+            font-size: 36px;
+            line-height: 1.17;
+    }
+}
+
+    &__list {
+        gap: 30px;
+        @include flex(center);
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        @include border(getColor("logo"));
+        border-radius: 4px;
+        fill: getColor("logo");
+        width: 210px;
+        height: 92px;
 
         &:hover,
         &:focus {
-            color: var(--blue);
+            @include border(getColor("blue"));
+            fill: getColor("blue");
             cursor: pointer;
+            @include transition(border);
+            @include transition(fill);
         }
     }
+}
+@media screen and (min-width: $screenTablet) {
+    .clients__logo {
+        flex-basis: calc((100% - 2 * 30px) / 3);
+    }
+}
 
-
-    &__icon {
-        border: 1px solid var(--socials__link-color);
-        border-radius: 4px;
-        gap: 30px;
-        --color1: currentColor;
-        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        max-width: 210px;
+@media screen and (min-width: $screenDesktop) {
+    .customers__list {
+    flex-wrap: nowrap;
+}
+    .customers__logo {
+        width: 170px;
         height: 92px;
-        display: block;
-
-        @media screen and (min-width: 768px) {
-            width: 226px;
-        }
-
-        @media screen and (min-width: 1200px) {
-            width: 170px;
-        }
     }
 }

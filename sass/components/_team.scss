@@ -1,0 +1,118 @@
+.team {
+    min-width: $screenMinWidth;
+    padding: 60px 15px;
+    margin: 0 auto;
+    background-color: getColor("gray-second");
+
+    @media screen and (min-width: $screenDesktop) {
+        padding: 94px 0;
+    }
+
+    &__container {
+        max-width: $screenDesktop;
+        margin: 0 auto;
+    }
+
+    &__flex {
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+
+        > li {
+            width: calc(100% - 30px);
+            max-width: 450px;
+        }
+    }
+    
+
+    &__heading {
+        @extend .activity__heading;
+
+        @media screen and (min-width: $screenDesktop) {
+            font-size: 36px;
+            line-height: 1.17;
+          }
+    }
+
+    &__info {
+        margin: auto 0;
+        padding: 0 0 24px 0;
+        background-color: getColor("white");
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+          0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+        text-align: center;
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.18;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        color: getColor("black-second");
+    }
+
+    &__specialization {
+        font-weight: 400;
+        line-height: 1.18;
+        margin-bottom: 16px; 
+        color: getColor("gray");
+    }
+
+    @media screen and (min-width: $screenTablet) {
+        .team__flex {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 15px;
+    
+            > li {
+                flex-basis: calc((100% - 30px) / 2);
+                max-width: 354px;
+            }
+        }
+    }
+    
+    @media screen and (min-width: $screenDesktop) {
+        .team__flex {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+    
+        .team__info {
+            max-width: 270px;
+            padding: 0 0 30px 0;
+        }
+}
+
+.social {
+    @include flex(center);
+    gap: 10px;
+    margin-top: 20px;
+
+    &__icon {
+        @include flex(center);
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        background-color: getColor("white");
+        fill: getColor("logo");
+
+        &--size {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover,
+        &:focus {
+            @include transition(fill);
+            cursor: pointer;
+            background-color: getColor("blue");
+            fill: getColor("white");
+        }
+    }
+}
+}
