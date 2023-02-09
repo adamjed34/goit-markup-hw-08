@@ -1,0 +1,181 @@
+.mainPicture {
+  background-color: $--background-color-dark;
+  background: linear-gradient(#2f303a40, #2f303a40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/bigAddBackground/phoneImg@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  max-width: 1600px;
+  padding: 150px 0 150px 0;
+
+  &__btn {
+    width: 200px;
+    height: 50px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: $--footer-Studio-text-color;
+    background-color: $--blue-text;
+    transition-property: color, background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:visited {
+      color: $--body-font-color;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $--footer-Studio-text-color;
+      color: $--body-font-color;
+    }
+  }
+
+  &__title {
+    color: $--footer-Studio-text-color;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 42px;
+    text-align: center;
+  }
+
+  &__display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mainPicture {
+    background-image: url(../images/bigAddBackground/tabletImg.png);
+    padding: 0;
+
+    &__display {
+      margin: 200px auto;
+    }
+
+    &__title {
+      color: $--footer-Studio-text-color;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 26px;
+      line-height: 42px;
+      text-align: center;
+    }
+
+    &__btn {
+      width: 200px;
+      height: 50px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .mainPicture {
+    background-image: url(../images/bigAddBackground/desktopImg.jpg);
+    padding: 100px 0 100px 0;
+
+    &__title {
+      font-size: 44px;
+      line-height: 60px;
+    }
+  }
+}
+
+// .bigAd {
+//   background-color: $--background-color-dark;
+//   background: linear-gradient(#2f303a40, #2f303a40);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-image: url(../images/bigAddBackground/desktopImg.jpg);
+//   height: 600px;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   width: 100vw;
+
+//   &__btn {
+//     width: 200px;
+//     height: 50px;
+//     font-family: "Roboto";
+//     font-style: normal;
+//     font-weight: 700;
+//     font-size: 16px;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     transition-property: color, background-color, box-shadow;
+//     transition-duration: 250ms;
+//     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+//     &:visited {
+//       color: $--body-font-color;
+//     }
+
+//     &:hover,
+//     &:focus {
+//       background-color: $--blue-text;
+//       color: $--footer-Studio-text-color;
+//     }
+//   }
+
+//   &__title {
+//     color: $--footer-Studio-text-color;
+//     font-weight: 900;
+//     font-size: 2.75rem;
+//     line-height: 1.16;
+//     text-align: center;
+//   }
+
+//   &__display {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 40px;
+//   }
+// }
+
+// @media screen and (min-width: 480px) and (max-width: 768px) {
+//   .bigAd {
+//     height: 400px;
+//     background-image: url(../images/bigAddBackground/tabletImg.png);
+
+//     &__title {
+//       font-family: "Roboto";
+//       font-style: normal;
+//       font-weight: 900;
+//       font-size: 26px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 480px) {
+//   .bigAd {
+//     background-image: url(../images/bigAddBackground/phoneImg.png);
+//     height: 400px;
+
+//     &__title {
+//       font-family: "Roboto";
+//       font-style: normal;
+//       font-weight: 900;
+//       font-size: 26px;
+//       letter-spacing: 0.06em;
+//     }
+//   }
+// }

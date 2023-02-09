@@ -1,0 +1,115 @@
+.customers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: calc(100% - 30px);
+  margin: 0 15px 0 15px;
+
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    height: 92px;
+
+    fill: $--social-media-color;
+    transition-property: fill, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px $--social-media-color;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      border-color: $--blue-text;
+    }
+
+    &:focus .customers__image,
+    &:hover .customers__image {
+      fill: $--blue-text;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .customers {
+    &__list {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .customers {
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__item {
+      max-width: 170px;
+    }
+  }
+}
+
+// @media screen and (min-width: 480px) and (max-width: 768px) {
+//   .customers {
+//     width: 480px;
+//     height: 519px;
+
+//     &__list {
+//       display: grid;
+//       flex-direction: unset;
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+
+//     &__item {
+//       width: 226px;
+//       height: 92px;
+//       display: flex;
+//       justify-content: center;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 480px) {
+//   .customers {
+//     width: 480px;
+//     height: 519px;
+
+//     &__list {
+//       display: grid;
+//       flex-direction: unset;
+//       grid-template-columns: 1fr 1fr;
+//     }
+//   }
+// }

@@ -1,0 +1,129 @@
+.teamPros {
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    height: 226px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__optimizer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__companies {
+    height: 120px;
+    width: 100%;
+    max-width: 450px;
+    background-color: $--crue-gallery-color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__list {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: $--body-font-color;
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.71;
+    color: $--gray-text;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .teamPros {
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    &__item {
+      width: 354px;
+    }
+    &__companies {
+      width: 354px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .teamPros {
+    &__list {
+      display: flex;
+      flex-direction: row;
+    }
+    &__item {
+      width: 260px;
+    }
+    &__companies {
+      width: 260px;
+    }
+  }
+}
+
+// @media screen and (min-width: 480px) and (max-width: 768px) {
+//   .teamPros {
+//     height: 522px;
+
+//     &__list {
+//       display: grid;
+//       grid-template-columns: 1fr 1fr;
+//     }
+
+//     &__item {
+//       width: 354px;
+//     }
+//     &__companies {
+//       width: 354px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 480px) {
+//   .teamPros {
+//     height: 994px;
+
+//     &__list {
+//       flex-direction: column;
+//     }
+
+//     &__optimizer {
+//       align-items: center;
+//     }
+
+//     &__item {
+//       width: 450px;
+//     }
+
+//     &__companies {
+//       width: 450px;
+//     }
+//   }
+// }
