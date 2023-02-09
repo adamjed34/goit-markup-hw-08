@@ -1,0 +1,62 @@
+.our-clients {
+  &__heading {
+    color: $first-color;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+
+    @include desktop {
+      font-size: 36px;
+      margin-bottom: 50px;
+      line-height: 1.16;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+
+    @include desktop {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+    flex-basis: calc((100% - 30px) / 2); 
+
+    @include tablet {
+      flex-basis: calc((100% - 60px) / 3);
+
+      @include desktop {
+        flex-basis: auto;
+      }
+    }
+  }
+
+  &__link {
+    padding: 16px 32px;
+    outline: 1px solid $twelfth-color;
+    border-radius: 4px;
+    cursor: pointer;
+    color: $twelfth-color;
+    transition: color, outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;}
+
+  &__icon {
+    fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $second-color;
+    outline-color: $second-color;
+  }
+}
