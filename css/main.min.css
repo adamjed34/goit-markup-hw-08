@@ -312,55 +312,19 @@ mobile-menu {
 .contact-list {
   display: none;
 }
-@media screen and (min-width: 768px) {
-  .contact-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    list-style-type: none;
-    gap: 10px;
+@media screen and (max-height: 635px) {
+  .mobile-nav {
+    margin-bottom: 120px;
   }
 }
-@media screen and (min-width: 1200px) {
-  .contact-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    gap: 30px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-right: 12px;
+@media screen and (max-height: 644px) and (orientation: landscape) {
+  .mobile-nav {
+    margin-bottom: 70px;
   }
 }
-.contact-list__item {
-  color: #757575;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media screen and (min-width: 1200px) {
-  .contact-list__item {
-    font-size: 14px;
-    line-height: 1.14;
+@media screen and (max-height: 350px) and (orientation: landscape) {
+  .mobile-nav {
+    margin-bottom: 40px;
   }
 }
 .contact-list__icon {
