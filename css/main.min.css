@@ -1446,7 +1446,7 @@ body {
   -webkit-transform: translate(-50%, -50%) scale(0.4);
   transform: translate(-50%, -50%) scale(0.4);
 }
-.mmodal {
+.modal {
   position: relative;
   margin: auto;
   background-color: var(--main-background-color);
