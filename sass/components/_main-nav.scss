@@ -1,0 +1,52 @@
+.main-nav {
+  display: flex;
+
+  &__links {
+    display: none;
+
+    @include tablet {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      margin-left: 83px;
+      gap: 60px;
+    }
+
+    @include desktop {
+      margin-left: 93px;
+      gap: 46px;
+    }
+  }
+
+  &__menu-link {
+    font-style: normal;
+    color: $first-color;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--underline {
+      position: relative;
+      color: $second-color;
+    }
+
+    &--underline::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 53px;
+      height: 4px;
+      bottom: -32px;
+      background-color: $second-color;
+      border-radius: 2px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $second-color;
+    }
+  }
+}
