@@ -1,228 +1,27 @@
+@use "../utils" as *;
+
+footer {
+  background-color: #2f303a;
+  padding: 60px 0;
+}
+
 .footer {
-    background-color: $fifth-color;
-    padding-top: 60px;
-    padding-bottom: 60px;
+  @include rwd(var(--tablet)) {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-inline: 15px;
+  }
 
-    &__content {
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  @include rwd(var(--desktop)) {
+    justify-content: space-between;
+  }
+}
 
-        @include tablet {
-            flex-direction: row;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+.footer__box {
+  text-align: var(--text-center);
 
-        @include desktop {
-            flex-direction: row;
-        }
-    }
-
-    &__address {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-style: inherit;
-        margin-bottom: 60px;
-
-        @include tablet {
-         align-items: center;
-        }
-
-        @include desktop {
-            margin-bottom: 0;
-            align-items: baseline;
-        }
-    }
-
-    &__company-contacts {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        list-style-type: none;
-        gap: 8px;
-        line-height: 1.71;
-        letter-spacing: 0.03em;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        margin-top: 20px;
-
-        @include tablet {
-            gap: 9px;
-            align-items: center;
-
-            @include desktop {
-                text-align: left;
-                align-items: baseline;
-            }
-        }
-    }
-
-    &__localization-info {
-        color: $tenth-color;
-        line-height: 1.71;
-        letter-spacing: 0.03em;
-        font-size: 14px;
-        font-style: normal;
-    }
-
-    &__contact-info {
-        color: rgba(255, 255, 255, 0.6);
-        text-decoration: none;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        line-height: 1.71;
-        letter-spacing: 0.03em;
-        font-size: 14px;
-        font-style: normal;
-    }
-
-    &__company-contacts &__contact-info:hover,
-    .footer__company-contacts &__contact-info:focus,
-    &__company-contacts &__contact-info:active {
-        color: $second-color;
-    }
-
-    &__social-media {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 60px;
-
-        @include tablet {
-            margin-bottom: 102px;
-        }
-        @include desktop {
-            margin-bottom: 0;
-            margin-left: 70px;
-            padding-bottom: 40px;
-            align-items: baseline;
-        }
-    }
-
-    &__social-heading {
-        font-style: normal;
-        align-items: center;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.14px;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        color: $tenth-color;
-        margin-bottom: 20px;
-
-        @include tablet {
-            padding-top: 5px;
-        }
-    }
-
-    &__social-media-list {
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-        gap: 10px;
-
-        @include desktop {
-            flex-direction: row;
-        }
-    }
-
-    &__social-link {
-        display: block;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: $tenth-color;
-        padding: 12px;
-        cursor: pointer;
-        transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-        &:hover,
-        &:focus {
-            color: $tenth-color;
-            background-color: $second-color;
-        }
-    }
-
-    &__social-icon {
-        display: block;
-        fill: currentColor;
-        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    &__newsletter {
-        margin-left: 0;
-        @include desktop {
-            margin-left: 78px;
-            padding-top: 12px;
-            padding-bottom: 34px;
-        }
-    }
-
-    &__newsletter-heading {
-        text-transform: uppercase;
-        text-align: center;
-        color: $tenth-color;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.14px;
-        letter-spacing: 0.03em;
-        margin-bottom: 20px;
-
-        @include desktop {
-            text-align: left;
-            width: 207px;
-        }
-    }
-
-    &__newsletter-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @include desktop {
-            flex-direction: row;
-            gap: 12px;
-        }
-    }
-
-    &__newsletter-input {
-        width: calc(100vw - 30px);
-        max-width: 450px;
-        height: 50px;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        background-color: inherit;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 4px;
-        padding-left: 16px;
-        font-size: 16px;
-        line-height: 1.25;
-        letter-spacing: 0.03em;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-        color: rgba(255, 255, 255, 0.6);
-        transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-        @include tablet {
-            width: 450px;
-        }
-
-        @include desktop {
-            margin-bottom: 0;
-            width: 358px;
-        }
-
-        &:hover,
-        &:active,
-        &:focus {
-            border: 1px solid $second-color;
-            outline: none;
-        }
-    }
-
-    &__newsletter-icon {
-        position: absolute;
-        top: 13px;
-        left: 148px;
-    }
+  @include rwd(var(--desktop)) {
+    text-align: initial;
+  }
 }
