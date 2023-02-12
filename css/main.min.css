@@ -156,7 +156,7 @@ header {
   bottom: 0;
   right: 0;
   z-index: 1;
-  overflow-y: visible;
+  overflow-y: scroll;
   padding-block: 48px;
   padding-left: 40px;
   -webkit-transform: translateX(100%);
