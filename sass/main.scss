@@ -1,3 +1,15 @@
-@use "utils";
-@use "base";
-@use "components";
+@import "./utils/vars";
+@import "./utils/globals";
+
+@import "./components/header";
+@import "./components/logo";
+@import "./components/hero";
+@import "./components/button";
+@import "./components/menu-mobile";
+@import "./components/modal";
+@import "./components/trumps";
+@import "./components/works";
+@import "./components/team";
+@import "./components/socials";
+@import "./components/customers";
+@import "./components/footer";

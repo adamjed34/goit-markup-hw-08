@@ -1,57 +1,216 @@
-@use "../utils" as *;
+
+.backdrop {
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+
+  transition-delay: 500ms;
+}
 
 .modal {
-  position: relative;
-  margin: auto;
-  background-color: var(--main-background-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
-    0 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: var(--main-border-radius);
-  width: 94%;
+  position: absolute;
+  width: calc(100vw - 30px);
   max-width: 450px;
-  height: 94%;
-  max-height: 609px;
+  min-height: 581px;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
 
-  @include max-width(470px) {
-    overflow-y: scroll;
+  background: $whiteColor;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0.25);
   }
 
-  @include max-height-landscape(648px) {
-    overflow-y: scroll;
+  &__close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 50%;
+    padding: 5px;
+    height: 30px;
+    background-color: $whiteColor;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 
-  @include rwd(var(--desktop)) {
-    width: 528px;
-    height: 581px;
-    max-width: none;
-    max-height: none;
+  &__title {
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__form-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: $supportColor;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 4px;
+  }
+
+  &__form-input {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    height: 40px;
+    padding-left: 41px;
+  }
+
+  &__form-input:hover,
+  &__form-input:focus {
+    border-color: $highlightColor;
+    outline: none;
+  }
+
+  &__form-svg {
+    position: absolute;
+    top: 28px;
+    left: 14px;
+  }
+
+  &__form-item:hover,
+  &__form-item:focus-within {
+    fill: $highlightColor;
+  }
+
+  &__form-comment {
+    padding: 12px 16px;
+    min-height: 120px;
+  }
+
+  &__form-comment::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &__form-checkbox {
+    margin-top: 10px;
+  }
+
+  &__form-regulations {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: $supportColor;
+
+    text-align: center;
+    display: block;
+
+    position: relative;
+  }
+
+  &__form-regulations-text {
+    padding-left: 24px;
+  }
+
+  &__form-regulations input[type="checkbox"] {
+    background-color: $whiteColor;
+    appearance: none;
+    width: 16px;
+    height: 15px;
+    border: 2px solid $blackColor;
+    border-radius: 2px;
+
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  &__form-checkbox-svg {
+    position: absolute;
+    transform: translateY(-50%);
+    opacity: 0;
+
+    background-color: $highlightColor;
+    border-radius: 2px;
+  }
+
+  &__form-regulations input[type="checkbox"]:checked + &__form-checkbox-svg {
+    opacity: 1;
+  }
+
+  &__form-regulations-link {
+    color: $highlightColor;
+  }
+
+  &__button {
+    @extend %button;
+    padding: 10px 76px;
+    margin: 20px auto 0;
+    display: block;
+  }
+
+  &__button:hover {
+    background-color: #188ce8;
   }
 }
 
-.modal__close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  background-color: var(--main-background-color);
-  @include bordered(rgba(0, 0, 0, 0.1));
-  border-radius: 50%;
-  cursor: var(--pointer);
-  padding: 0;
 
-  &:hover,
-  &:focus {
-    .modal__icon {
-      fill: var(--main-selection-color);
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    max-width: 528px;
+
+    &__title {
+      line-height: 1.15;
+    }
+
+    &__form-regulations {
+      font-size: 14px;
+      line-height: 1.71;
+    }
+
+    &__form-regulations-text {
+      padding-left: 39px;
+    }
+
+    &__form-regulations input[type="checkbox"] {
+      left: 15px;
+    }
+
+    &__form-checkbox-svg {
+      left: 15px;
     }
   }
 }
 
-.modal__icon {
-  fill: var(--secondary-icons-color);
-  transition: fill var(--transition-duration) var(--cubic-bezier);
-  position: absolute;
-  top: 9px;
-  left: 8px;
+
+
+@media screen and (min-width: 473px) {
+  .modal__form-checkbox-svg {
+    top: 50%;
+  }
+  .modal__form-regulations input[type="checkbox"] {
+    top: 50%;
+  }
 }

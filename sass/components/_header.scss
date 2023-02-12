@@ -1,16 +1,120 @@
-@use "../utils" as *;
-
-header {
-  border-bottom: 1px solid #ececec;
-}
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 10px;
+  background-color: $whiteColor;
+  border-bottom: 1px solid #ececec;
+  padding: 16px 0;
 
-  @include rwd(var(--tablet)) {
-    padding: 0 15px;
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-contact {
+    display: flex;
+    gap: 30px;
+    fill: currentColor;
+  }
+
+  &__menu-contact-item {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    color: $supportColor;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__menu-contact-item:hover,
+  &__menu-contact-item:focus {
+    color: $highlightColor;
+  }
+
+
+
+  &__menu {
+    list-style: none;
+    display: flex;
+  }
+
+  &__menu-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    color: $mainColor;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__menu-link:hover,
+  &__menu-link:focus {
+    color: $highlightColor;
+  }
+
+  &__menu-link--active {
+    position: relative;
+    color: $highlightColor;
+  }
+
+  &__menu-link--active::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $highlightColor;
+    border-radius: 2px;
+    top: 43.5px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .header {
+    padding: 26px 0;
+
+    &__menu {
+      margin-left: 83px;
+      gap: 60px;
+    }
+
+    &__menu-contact {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__menu-contact-item {
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+  .header {
+    padding: 24.54px 0 23.53px;
+
+    &__menu {
+      margin-left: 93px;
+      gap: 46px;
+    }
   }
 }
