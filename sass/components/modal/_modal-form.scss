@@ -1,0 +1,82 @@
+.feedback-form {
+    &__title {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+
+        @include fonts ($fw: null, $fs: 20px, $lh: 23px, $ls: 0.03em);
+
+        text-align: center;
+    }
+
+    &__name {
+        display: block;
+        margin-bottom: 4px;
+
+        @include fonts ($fs: 12px, $lh: 14px, $ls: 0.01em);
+
+        color: var(--light-txt-color);
+    }
+
+    &__icon {
+        position: absolute;
+        left: 12px;
+        bottom: 11px;
+        fill: currentColor;
+        @include animation (fill);
+    }
+}
+
+.feedback-form__field {
+    display: block;
+    position: relative;
+
+    &:nth-child(-n + 3) {
+        margin-bottom: 10px;
+    }
+
+    &:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+.feedback-form__input {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 12px 42px;
+    margin-bottom: 10px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    @include fonts ($fs: 12px, $lh: 14px);
+
+    @include animation (border-color);
+
+    &:last-child {
+        resize: none;
+        height: 120px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    &:last-child::placeholder {
+
+        @include fonts ($fs: 12px, $lh: 14px, $ls: 0.01em);
+
+        color: #75757580;
+    }
+
+    &:focus,
+    &:hover {
+        border-color: var(--blue-btn-color);
+    }
+
+    &:focus~.feedback-form__icon,
+    &:hover~.feedback-form__icon {
+        fill: var(--blue-btn-color);
+    }
+}
+
+@import './checkbox';

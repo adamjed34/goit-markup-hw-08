@@ -1,0 +1,45 @@
+.section-work {
+    @media screen and (max-width:1199px) {
+        display: none;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .section-work {
+        padding-top: 0;
+        
+        &__list {
+            @include flex-box ($gap: 30px, $align-items: null, $justify-content: null);
+        }
+    
+        &__container {
+            position: relative;
+        }
+    
+        &__text {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+    
+            @include flex-box ($gap: null);
+            width: 100%;
+            height: 70px;
+    
+            @include fonts ($fw: 700, $ls: 0.03em);
+    
+            text-transform: uppercase;
+    
+            color: var(--white-color);
+            background-color: rgba(47, 48, 58, 0.8);
+        }
+    
+        &__title {
+            text-align: center;
+            margin-bottom: 50px;
+    
+            @include fonts ($fw: null, $fs: 36px, $lh: 42px, $ls: 0.03em);
+    
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    } 
+}

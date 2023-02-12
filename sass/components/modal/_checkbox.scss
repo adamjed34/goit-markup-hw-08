@@ -1,0 +1,77 @@
+.feedback-checkbox {
+    @extend %visually-hidden;
+
+    &__field {
+        @include flex-box ();
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        color: var(--light-txt-color);
+
+        @media screen and (max-width:1199px) {
+            @include fonts ($fs: 12px, $lh: 14px, $ls: 0.03em)
+        }
+
+        @media screen and (min-width:1200px) {
+            @include fonts ($lh: 24px, $ls: 0.03em);
+        }
+    }
+}
+
+/**
+  |============================
+  | icon style
+  |============================
+*/
+
+.feedback-checkbox {
+    &+&__icon .icon-checked {
+        opacity: 0;
+        @include animation (opacity);
+    }
+
+    &:checked+&__icon .icon-unchecked {
+        opacity: 0;
+    }
+
+    &:checked+&__icon .icon-checked {
+        opacity: 1;
+    }
+}
+
+.icon-unchecked {
+    @include animation (opacity);
+}
+
+.feedback-checkbox__link {
+    color: var(--blue-txt-color);
+    @include animation ();
+
+    &:hover,
+    &:focus {
+        color: #165f9a;
+    }
+}
+
+.btn__feedback {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 52px;
+
+    background-color: var(--blue-btn-color);
+    border: none;
+    color: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    @include fonts ($fw: 700, $fs: 16px, $lh: 30px, $ls: 0.06em);
+
+    @include animation (background-color);
+
+    &:hover,
+    &:focus {
+        background-color: #1a7ac8f9;
+    }
+}

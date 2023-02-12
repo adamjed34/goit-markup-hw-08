@@ -1,0 +1,76 @@
+:root {
+    /* color root selector */
+
+    /* text color */
+    --main-txt-color: #212121;
+    --light-txt-color: #757575;
+    --blue-txt-color: #2196f3;
+    --black-txt-color: #000000;
+    --grey-txt-color: #d9d9d9;
+    --social-color: #afb1b8;
+
+    /* background color */
+    --light-bcg-color: #f5f4fa;
+    --white-color: #ffffff;
+    --dark-bcg-color: #2f303a;
+    --blue-btn-color: #2196f3;
+
+    --border-setup: 1px solid #eeeeee;
+
+    /* font root selector */
+    --main-font: roboto, sans-serif;
+    --secondary-font: Raleway, sans-serif;
+}
+
+
+.page {
+    font-family: var(--main-font);
+    color: var(--main-txt-color);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width:480px) {
+        width: 480px;
+    }
+
+    @media screen and (min-width:768px) {
+      width: 768px;  
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+    }
+}
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media screen and (min-width:1200px) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    font-family: inherit;
+    color: currentColor;
+    border: none;
+
+    &:hover,
+    &:focus {
+        color: var(--light-txt-color);
+        background-color: var(--blue-btn-color);
+    }
+}

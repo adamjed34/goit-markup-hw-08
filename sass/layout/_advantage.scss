@@ -1,0 +1,79 @@
+.section-advantage {
+    &__title--hidden {
+        @extend %visually-hidden;
+    }
+
+    &__list {
+        @media screen and (min-width:768px) {
+            display: flex;
+            flex-wrap: wrap;
+            width: 738px;
+            gap: 30px;
+        }
+
+        @media screen and (min-width:1200px) {
+            width: 1170px;
+            flex-wrap: nowrap;
+            gap: 30px;
+        }
+    }
+
+
+
+    &__container {
+        @include flex-box ($gap: null);
+
+        height: 120px;
+        background-color: var(--light-bcg-color);
+        border-radius: 4px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width:767px) {
+            max-width: 450px;
+        }
+
+        @media screen and (min-width:768px) {
+            flex-wrap: wrap;
+            width: 354px;
+        }
+
+        @media screen and (min-width:1200px) {
+            flex-wrap: wrap;
+            width: 270px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+
+        @include fonts ($fw: null, $ls: 0.03em);
+
+        @media screen and (max-width:767px) {
+            text-align: center;
+        }
+
+        @media screen and (min-width:768px) {
+            width: 354px;
+        }
+
+        @media screen and (min-width:1200px) {
+            width: 270px;
+        }
+    }
+
+    &__text {
+        min-width: 270px;
+
+        color: var(--light-txt-color);
+
+        @include fonts ($fw: null, $lh: 24px, $ls: 0.03em);
+
+        @media screen and (min-width:768px) {
+            width: 354px;
+        }
+
+        @media screen and (min-width:1200px) {
+            width: 270px;
+        }
+    }
+}

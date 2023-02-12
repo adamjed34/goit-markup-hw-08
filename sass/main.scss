@@ -1,3 +1,11 @@
-@use "utils";
-@use "base";
-@use "components";
+// utils  
+@import './utils/utils';
+
+// base
+@import './base/base';
+
+// layout
+@import './layout/layout';
+
+// components
+@import './components/components'

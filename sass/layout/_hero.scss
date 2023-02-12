@@ -1,0 +1,101 @@
+.section-hero {
+    background-color: var(--dark-bcg-color);
+
+    padding-top: 118px;
+    padding-bottom: 118px;
+    text-align: center;
+
+    @media screen and (min-width:1200px) {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/mob/hero/hero1x.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+            url(../images/mob/hero/hero2x.jpg);
+    }
+
+    @media screen and (min-width: 481px) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+            url(../images/tab/hero/hero1x.jpg);
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                url(../images/tab/hero/hero2x.jpg);
+        }
+    }
+
+
+    @media screen and (min-width: 769px) {
+
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+            url(../images/desc/hero/hero1x.jpg);
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                url(../images/desc/hero/hero2x.jpg);
+        }
+    }
+}
+
+.container__main-title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    @media screen and (max-width:1199px) {
+        max-width: 360px;
+    }
+
+    @media screen and (min-width:1200px) {
+        width: 696px;
+    }
+}
+
+.main-title {
+    text-align: center;
+
+    color: var(--white-color);
+    text-transform: uppercase;
+
+    @include fonts ($fw: 900, $fs: 26px, $lh: 42px, $ls: 0.06em);
+
+    @media screen and (min-width:1200px) {
+        @include fonts ($fw: 900, $fs: 44px, $lh: 60px, $ls: 0.06em);
+    }
+}
+
+.section-hero__btn {
+    display: block;
+    padding: 10px 24px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+
+    background-color: var(--blue-btn-color);
+    color: var(--white-color);
+
+    @include fonts ($fw: 700, $fs: 16px, $lh: 30px, $ls: 0.06em);
+
+    @include animation-double ();
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: rgb(1, 122, 220);
+        color: #212121;
+    }
+}

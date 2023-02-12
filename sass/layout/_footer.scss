@@ -1,0 +1,131 @@
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--dark-bcg-color);
+
+    @media screen and (max-width:767px) {
+        text-align: center;
+    }
+
+    &__block {
+        @media screen and (min-width:768px) and (max-width:1199px) {
+            margin-left: 61px;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    &__social-block {
+        @media screen and (min-width:768px) and (max-width:1199px) {
+            margin-right: 74px;
+            text-align: center;
+        }
+    }
+
+    &__container {
+        @media screen and (min-width:1200px) {
+            @include flex-box ($gap: null, $align-items: baseline, $justify-content: null);
+        }
+    }
+
+    &__txt {
+        color: var(--blue-txt-color);
+    }
+
+    &__container--tablet {
+        @media screen and (min-width:768px) {
+            display: flex;
+        }
+
+        @media screen and (min-width:768px) and (max-width:1199px) {
+            margin-bottom: 60px;
+        }
+
+        @media screen and (min-width:768px) {
+            align-items: baseline;
+        }
+        @media screen and (min-width:1200px) {
+            gap: 70px;
+            margin-right: auto;
+            }
+    }
+}
+
+.footer__logo {
+    display: block;
+    margin-bottom: 20px;
+
+    text-decoration: none;
+    color: var(--white-color);
+    font-family: var(--secondary-font);
+
+    @include fonts ($fw: 700, $fs: 26px, $lh: 31px, $ls: 0.03em);
+
+    &:hover,
+    &:focus {
+        color: var(--white-color);
+    }
+}
+
+.contact-address {
+    font-style: normal;
+
+
+    &__list {
+        @media screen and (max-width:767px) {
+            margin-bottom: 60px;
+        }
+    }
+
+
+    &__item:first-child &__link {
+        color: var(--white-color);
+
+        @include fonts ($lh: 24px, $ls: 0.03em);
+
+        @include animation ();
+    }
+
+    &__link {
+        color: var(--grey-txt-color);
+
+        @include fonts ($lh: 24px, $ls: 0.03em);
+
+        @include animation ();
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 9px;
+    }
+}
+
+.contact-address {
+
+    &__item:first-child &__link:hover,
+    &__item:first-child &__link:focus {
+        color: var(--blue-txt-color);
+    }
+}
+
+.contact-address__link {
+
+    &:hover,
+    &:focus {
+        color: var(--blue-txt-color);
+    }
+}
+
+.social-block {
+    &__title {
+        margin-bottom: 20px;
+
+        color: var(--white-color);
+        text-transform: uppercase;
+
+        @include fonts ($fw: null, $ls: 0.03em);
+    }
+}
+
+@import '../components/social';
+
+@import '../components/footer-form';
