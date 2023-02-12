@@ -1,45 +1,43 @@
+@use "../utils" as *;
 
-.customers__list {
-  list-style-type: none;
+.customers {
+  @include flex;
+}
+
+.customers__link {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: center;
+  width: 210px;
+  height: 92px;
+  @include bordered(var(--main-icons-color));
+  border-radius: var(--main-border-radius);
+  transition: border-color var(--transition-duration) var(--cubic-bezier);
 
-  &-link {
-    display: block;
-    border: 1px solid $customersIcon;
-    border-radius: 4px;
-    padding: 16px 32px;
-    fill: $customersIcon;
-    text-align: center;
+  &:hover,
+  &:focus {
+    border-color: var(--main-selection-color);
 
-    transition-property: fill, border-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    .customers__icon {
+      fill: var(--main-selection-color);
+    }
   }
 
-  &-link:hover {
-    fill: $highlightColor;
-    border-color: $highlightColor;
+  @include max-width(479px) {
+    width: 290px;
+    height: 110px;
   }
-}
-.customers__box {
-  flex-basis: calc((100% - 60px) / 2);
-}
 
+  @include rwd(var(--tablet)) {
+    width: 226px;
+  }
 
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .customers__box {
-    flex-basis: calc((100% - 60px) / 3);
+  @include rwd(var(--desktop)) {
+    width: 170px;
   }
 }
 
-
-
-@media screen and (min-width: 1200px) {
-  .customers__list {
-    flex-wrap: nowrap;
-  }
+.customers__icon {
+  fill: var(--main-icons-color);
+  transition: fill var(--transition-duration) var(--cubic-bezier);
 }
